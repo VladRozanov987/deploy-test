@@ -1,12 +1,20 @@
+import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const posts = [
-    {id: 1, title: 'First'},
-    {id: 2, title: 'Second'},
-    {id: 3, title: 'Third'},
-    {id: 4, title: 'Four'},
-  ]
+
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/posts')
+      .then(response => response.json)
+      .then(data => {
+        console.log(data);
+        setPosts(data);
+      })
+  }, []);
+  
   return (
     <div className="App">
       <h1>Deploy APP</h1>
