@@ -7,7 +7,7 @@ function App() {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts')
+    fetch('https://test-app-step.herokuapp.com/')
       .then(response => response.json)
       .then(data => {
         console.log(data);
