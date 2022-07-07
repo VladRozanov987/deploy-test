@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     fetch('https://test-app-step.herokuapp.com/')
-      .then(response => response.json)
+      .then(response => response.json())
       .then(data => {
         console.log(data);
         setPosts(data);
